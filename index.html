@@ -25,7 +25,9 @@
 <body>
     <!-- Div per Vue JS -->
     <div id="app">
-        <h1>{{message}}</h1>
+        <ul>
+            <li v-for="elemento in toDoList">{{elemento}}</li>
+        </ul>
     </div>
     <!-- My JS -->
     <script src="./js/main.js"></script>

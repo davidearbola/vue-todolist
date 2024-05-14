@@ -5,7 +5,13 @@ const { createApp } = Vue;
 createApp({
 	data() {
 		return {
-			message: "Hello New Project!",
+			toDoList: [
+				"Milestone 0",
+				"Milestone 1",
+				"Milestone 2",
+				"Bonus",
+				"Bonus 2",
+			],
 		};
 	},
 	methods: {},
