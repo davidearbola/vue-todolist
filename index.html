@@ -25,6 +25,9 @@
 <body>
     <!-- Div per Vue JS -->
     <div id="app">
+        <label for="toDo">Cosa devo fare?</label><br>
+        <input type="text" id="toDo" v-model="valoreInput" placeholder="Scrivi">
+        <button @click="addToDo(valoreInput, toDoList)">Aggiungi ToDo</button>
         <ul>
             <li v-for="elemento in toDoList">{{elemento}}</li>
         </ul>

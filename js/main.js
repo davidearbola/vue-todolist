@@ -12,9 +12,17 @@ createApp({
 				"Bonus",
 				"Bonus 2",
 			],
+			valoreInput: "",
 		};
 	},
-	methods: {},
+	methods: {
+		addToDo(valore, array) {
+			console.log(valore);
+			array.push(valore);
+			console.log(array);
+			this.valoreInput = ""; // valore = ""; non funziona
+		},
+	},
 	mounted() {
 		console.log("Applicazione montata");
 	},
