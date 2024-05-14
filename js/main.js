@@ -38,6 +38,7 @@ createApp({
 			],
 			valoreInput: "",
 			removeIcon: "fa-solid fa-x",
+			classeColor: "red",
 		};
 	},
 	methods: {
@@ -46,7 +47,8 @@ createApp({
 			this.valoreInput = ""; // valore = ""; non funziona
 		},
 		removeToDo(array, indice) {
-			array.splice(indice, 1);
+			array[indice].done = false;
+			console.log(this.toDoList);
 		},
 	},
 	mounted() {
