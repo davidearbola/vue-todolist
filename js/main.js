@@ -13,6 +13,7 @@ createApp({
 				"Bonus 2",
 			],
 			valoreInput: "",
+			removeIcon: "fa-solid fa-x",
 		};
 	},
 	methods: {
@@ -21,6 +22,11 @@ createApp({
 			array.push(valore);
 			console.log(array);
 			this.valoreInput = ""; // valore = ""; non funziona
+		},
+		removeToDo(array, indice) {
+			console.log(array[indice]);
+			array.splice(indice, 1);
+			console.log(array);
 		},
 	},
 	mounted() {
