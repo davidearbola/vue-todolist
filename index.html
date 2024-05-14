@@ -29,7 +29,8 @@
         <input type="text" id="toDo" v-model="valoreInput" placeholder="Scrivi">
         <button @click="addToDo(valoreInput, toDoList)">Aggiungi ToDo</button>
         <ul>
-            <li v-for="elemento, i in toDoList">{{elemento}} <i @click="removeToDo(toDoList,i)" :class="removeIcon"></i>
+            <li v-for="elemento, i in toDoList">{{elemento.stringa}} <i @click="removeToDo(toDoList,i)"
+                    :class="removeIcon"></i>
             </li>
         </ul>
     </div>
