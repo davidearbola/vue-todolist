@@ -1,7 +1,7 @@
-.green {
-	color: green;
+ul {
+	list-style-type: none;
 }
 
-.red {
-	color: red;
+.dNone {
+	display: none;
 }
