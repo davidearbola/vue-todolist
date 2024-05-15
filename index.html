@@ -24,17 +24,6 @@
 
 <body>
     <!-- Div per Vue JS -->
-    <!-- <div id="app">
-        <label for="toDo">Cosa devo fare?</label><br>
-        <input type="text" id="toDo" v-model="valoreInput" placeholder="Scrivi">
-        <button @click="addToDo(valoreInput, toDoList)">Aggiungi ToDo</button>
-        <ul>
-            <li v-for="elemento, i in toDoList"
-                :class="{ green : (elemento.done==false), red: (elemento.done == true) }">
-                {{elemento.stringa}} <i @click="removeToDo(toDoList,i)" :class="removeIcon"></i>
-            </li>
-        </ul>
-    </div> -->
     <div id="app">
         <div class="text-center bg-dark text-white p-4 mb-2">
             <h1>ToDo List</h1>
@@ -42,21 +31,23 @@
         <div class="container text-center">
             <div class="mb-2">
                 <label for="toDo">Add ToDo</label><br>
-                <input type="text" id="toDo" v-model="valueInput" placeholder="Scrivi il ToDo">
-                <button @click="addToDo(valueInput)" class="btn btn-dark">Add</button>
+                <input @keyup.enter="addToDo(valueInput, toDoList)" type="text" id="toDo" v-model="valueInput"
+                    placeholder="Scrivi il ToDo">
+                <button @click="addToDo(valueInput, toDoList)" class="btn btn-dark">Add</button>
             </div>
             <div class="d-flex justify-content-center mb-2">
                 <ul class="p-0">
                     <li v-for="elemento, i in toDoList">{{elemento.stringa}}
-                        <span @click="trueToDo(toDoList,i)" :class="{dNone: (elemento.done == true)}"
-                            class="badge rounded-pill text-bg-success">{{badgeSuccess}}</span>
-                        <span @click="falseToDo(toDoList,i)" :class="{dNone: (elemento.done == false)}"
+                        <span @click="falseToDo(toDoList,i)" :class="{'d-none': (elemento.done == false)}"
+                            class="badge rounded-pill text-bg-success">{{badgeDone}}</span>
+                        <span @click="trueToDo(toDoList,i)" :class="{'d-none': (elemento.done == true)}"
                             class="badge rounded-pill text-bg-danger">{{badgeToDo}}</span>
                     </li>
                 </ul>
             </div>
             <div>
-                <button @click="removeList()" :class="{dNone: (toDoList.length == 0)}" class="btn btn-dark">Inizia una
+                <button @click="removeList()" :class="{'d-none': (toDoList.length == 0)}" class="btn btn-dark">Inizia
+                    una
                     nuova
                     lista</button>
             </div>
